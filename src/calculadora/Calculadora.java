@@ -53,17 +53,19 @@ public class Calculadora {
 				System.out.println("Digite outro número: ");
 				int num2 = scanner.nextInt();
 				
-				result = num1 / num2;
-				System.out.println("O resultado da"
-						+ " divisão entre " + num1 + " e "
-						+ num2 + " é igual a " + result);
+				if (num2 != 0) {
+					result = num1 / num2;
+					System.out.println("O resultado da"
+							+ " divisão entre " + num1 + " e "
+							+ num2 + " é igual a " + result);
+				} else {
+					System.out.println("Erro! Divisão por 0 não é permitida");
+				}
 			} else {
 				System.out.println("Erro");
+				scanner.close();
 			}
-		}
-			
-		while (userChoice > 0 && userChoice < 5);
-
+		} while (userChoice > 0 && userChoice < 5);
 	}
 	
 	public static int showCalculator() {
@@ -77,6 +79,8 @@ public class Calculadora {
 				+ "\n4 para divisão\n");
 		
 		int choice = scanner.nextInt();
+		
+		scanner.close();
 		
 		return choice;
 	}
