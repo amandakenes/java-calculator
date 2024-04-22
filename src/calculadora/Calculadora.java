@@ -9,7 +9,7 @@ public class Calculadora {
 		Scanner scanner = new Scanner(System.in);
 		
 		do {
-			userChoice = showCalculator();
+			userChoice = showCalculator(scanner);
 			
 			int result;
 			
@@ -69,9 +69,7 @@ public class Calculadora {
 		scanner.close();
 	}
 	
-	public static int showCalculator() {
-		Scanner scanner = new Scanner(System.in);
-		
+	public static int showCalculator(Scanner scanner) {
 		System.out.println("----------------------------------------");
 		System.out.println("Calculadora Simples");
 		System.out.println("----------------------------------------");
@@ -80,9 +78,7 @@ public class Calculadora {
 				+ "\n4 para divisão\n");
 		
 		int choice = scanner.nextInt();
-		
-		scanner.close();
-		
+				
 		return choice;
 	}
 }
