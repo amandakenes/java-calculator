@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Calculadora {
 	public static void main(String[] args) {
-		int userChoice = 1;
+		int userChoice;
+		
+		Scanner scanner = new Scanner(System.in);
 		
 		do {
 			userChoice = showCalculator();
 			
 			int result;
-			
-			Scanner scanner = new Scanner(System.in);
 			
 			if (userChoice == 1) {
 				System.out.println("Digite um número: ");
@@ -63,9 +63,10 @@ public class Calculadora {
 				}
 			} else {
 				System.out.println("Erro");
-				scanner.close();
 			}
 		} while (userChoice > 0 && userChoice < 5);
+		
+		scanner.close();
 	}
 	
 	public static int showCalculator() {
